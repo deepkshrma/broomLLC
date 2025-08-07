@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import logo_image from "../../assets/images/broomllclogo.png";
 import grid_image from "../../assets/images/gridimage.png";
 import { EyeIcon, EyeSlashIcon } from "@heroicons/react/24/solid";
@@ -10,21 +11,24 @@ import ContextApi from "../../ContextApi";
 import { Navigate, useNavigate } from "react-router-dom";
 
 const Sign_in = () => {
-  const { authData, setAuthData } = useContext(ContextApi);
-
+  const { authData, setAuthData, authLoading } = useContext(ContextApi);
   const [show_password, setShowPassword] = useState(false);
   const [message, setMessage] = useState("");
   const [errors, setErrors] = useState({});
-
   const [formdata, setFormdata] = useState({
     email: "",
     password: "",
   });
-
   const navigate = useNavigate();
 
-  if (authData?.token) {
-    return <Navigate to="/dashboard" />;
+  useEffect(() => {
+    if (!authLoading && authData?.token) {
+      navigate("/dashboard");
+    }
+  }, [authLoading, authData, navigate]);
+
+  if (authLoading || authData?.token) {
+    return null; // prevents entire sign-in render
   }
 
   const handleChange = (e) => {
