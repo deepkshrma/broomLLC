@@ -31,6 +31,7 @@ function ProfileUpdate() {
     profile_picture: "",
   });
 
+  const [isFetching, setIsFetching] = useState(true);
   const [loading, setLoading] = useState(false);
   const [profileImage, setProfileImage] = useState(null);
   const [previewUrl, setPreviewUrl] = useState("");
@@ -76,12 +77,20 @@ function ProfileUpdate() {
             zipCode: data.address?.zipCode || "",
           },
         });
+        setIsFetching(false);
       }
     } catch (error) {
       const errorMessage = error?.response?.data?.message || "failed to load !";
       toast.error(errorMessage);
     }
   };
+  if (isFetching) {
+    return (
+      <div className="flex items-center justify-center h-[60vh]">
+        <p className="text-gray-600 text-lg">Loading profile...</p>
+      </div>
+    );
+  }
 
   const handleChange = (e) => {
     const { name, value } = e.target;

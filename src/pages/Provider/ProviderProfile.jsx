@@ -129,7 +129,14 @@ function ProviderProfile() {
     ],
   }[fromPage] || [{ label: "Provider Profile", path: "#" }];
 
-  if (loading) return <div className="p-6">Loading provider details...</div>;
+  if (loading) {
+    return (
+      <div className="w-full h-[70vh] flex items-center justify-center">
+        <p className="text-gray-600 text-lg">Loading provider profile...</p>
+      </div>
+    );
+  }
+
   if (!provider) return <div className="p-6">Provider not found.</div>;
 
   return (
