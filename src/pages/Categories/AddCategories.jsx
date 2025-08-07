@@ -5,6 +5,7 @@ import axios from "axios";
 import { useLocation, useNavigate } from "react-router-dom";
 import { BASE_URL } from "../../config/Config";
 import { toast } from "react-toastify";
+import BreadcrumbsNav from "../../components/common/BreadcrumbsNav";
 
 
 const currencies = [
@@ -136,6 +137,12 @@ function AddCategories() {
 
   return (
     <div className="main main_page">
+      <BreadcrumbsNav
+        customTrail={[
+          { label: "All SubCategories", path: "/Categories" },
+          { label: "Add SubCategory", path: "/AddCategories" },
+        ]}
+      />
       <PageTitle
         title={isEdit ? "Edit Sub Category" : "Add New Sub Category"}
       />

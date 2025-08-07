@@ -11,6 +11,7 @@ import { RiDeleteBinLine } from "react-icons/ri";
 import UserUpdateStatus from "../../components/UserUpdateStatus/UserUpdateStatus";
 import DeleteModel from "../../components/DeleteModel/DeleteModel";
 import Pagination from "../../components/common/Pagination";
+import BreadcrumbsNav from "../../components/common/BreadcrumbsNav";
 import { useNavigate } from "react-router-dom";
 import * as XLSX from "xlsx";
 import { saveAs } from "file-saver";
@@ -158,6 +159,11 @@ function CustomerList() {
 
   return (
     <div className="main main_page bg-[#F3F4F8] font-Montserrat space-y-4">
+      <BreadcrumbsNav
+  customTrail={[
+    { label: "Users List", path: "/CustomerList" },
+  ]}
+/>
       <PageTitle title={"Customer"} />
 
       <div className="mt-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">

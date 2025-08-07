@@ -3,6 +3,7 @@ import axios from "axios";
 import { useParams, useLocation } from "react-router-dom";
 import Togglebutton from "../../components/common/Togglebutton";
 import { permissionSections } from "../../config/permissionSchema";
+import BreadcrumbsNav from "../../components/common/BreadcrumbsNav";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faUserShield } from "@fortawesome/free-solid-svg-icons";
 import { useNavigate } from "react-router-dom";
@@ -166,6 +167,14 @@ function RoleUpdate() {
 
   return (
     <div className="main main_page w-full h-full p-5 box-border mb-[100px] bg-gray-50">
+      <BreadcrumbsNav
+        customTrail={[
+          { label: "Role List", path: "/Roles" },
+          id
+            ? { label: "Update Role", path: `/RoleUpdate/${id}` }
+            : { label: "Add Role", path: "/RoleUpdate" },
+        ]}
+      />
       <div className="flex justify-between items-center mb-5">
         <h2 className="text-[20px] font-bold text-gray-700 flex items-center gap-2">
           <FontAwesomeIcon icon={faUserShield} />{" "}

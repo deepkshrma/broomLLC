@@ -24,6 +24,7 @@ import { FaUserShield } from "react-icons/fa6";
 import PendingActionModel from "./PendingActionModel";
 import DeleteModel from "../../components/DeleteModel/DeleteModel";
 import Pagination from "../../components/common/Pagination";
+import BreadcrumbsNav from "../../components/common/BreadcrumbsNav";
 import { useNavigate } from "react-router-dom";
 import * as XLSX from "xlsx";
 
@@ -207,6 +208,9 @@ function ProviderList() {
   return (
     <>
       <div className="main main_page bg-[#F3F4F8] font-Montserrat space-y-4">
+        <BreadcrumbsNav
+          customTrail={[{ label: "Provider List", path: "/ProviderList" }]}
+        />
         {/* ---------title page */}
         <PageTitle title={"Provider"} />
         {/* ---------card box */}
@@ -276,12 +280,6 @@ function ProviderList() {
                   className="ml-6 text-[14px] outline-none bg-blue-50 appearance-none"
                 />
               </div>
-              {/* <button
-                type="submit"
-                className="px-[15px] py-[8px] text-[14px] bg-blue-500 rounded text-white cursor-pointer"
-              >
-                Search
-              </button> */}
             </form>
             <div className="flex gap-2">
               <div className="flex gap-2 items-center">
@@ -397,27 +395,6 @@ function ProviderList() {
 
                       {/* Action */}
                       <td className="text-[14px] px-8 py-3 text-center">
-                        {/* <div className="flex justify-center border border-gray-300 rounded-md overflow-hidden">
-                          <button
-                            className="w-8 h-8 flex items-center justify-center hover:bg-gray-100 transition  cursor-pointer"
-                            title="View"
-                            onClick={() =>
-                              navigate(`/ProviderProfile/${item._id}`)
-                            }
-                          >
-                            <FiEye size={18} />
-                          </button>
-                          <button
-                            className="w-8 h-8 flex items-center justify-center border-l border-gray-300 hover:bg-gray-100 transition  cursor-pointer"
-                            onClick={() => handleDelete(item.id)}
-                            title="Delete"
-                          >
-                            <RiDeleteBinLine
-                              className="text-red-500"
-                              size={18}
-                            />
-                          </button>
-                        </div> */}
                         <div className="w-full flex border-1 border-gray-300 rounded-md">
                           <div
                             className="w-1/2 flex justify-center items-center px-2 py-2 hover:bg-gray-100 cursor-pointer"

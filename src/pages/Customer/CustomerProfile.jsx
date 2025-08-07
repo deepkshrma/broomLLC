@@ -4,6 +4,7 @@ import { useParams, useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import profile_image from "../../assets/images/profile.avif";
 import { USER_BASE_URL } from "../../config/Config";
+import BreadcrumbsNav from "../../components/common/BreadcrumbsNav";
 
 function CustomerProfile() {
   const { id } = useParams();
@@ -51,7 +52,13 @@ function CustomerProfile() {
   } - ${address?.zipCode || ""}`;
 
   return (
-    <div className="main main_page flex flex-col items-center">
+    <div className="main main_page flex flex-col ">
+      <BreadcrumbsNav
+  customTrail={[
+    { label: "Users List", path: "/CustomerList" },
+    { label: "User Profile", path: "/CustomerProfile/:id" },
+  ]}
+/>
       <div className="w-full flex justify-start translate-x-28">
         <h1 className="py-[10px] font-[600] text-[20px] flex justify-start">
           User Profile

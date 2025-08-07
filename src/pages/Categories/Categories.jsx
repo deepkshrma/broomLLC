@@ -15,6 +15,7 @@ import { useLocation, useNavigate } from "react-router-dom";
 import DeleteModel from "../../components/DeleteModel/DeleteModel";
 import Pagination from "../../components/common/Pagination";
 import { BASE_URL } from "../../config/Config";
+import BreadcrumbsNav from "../../components/common/BreadcrumbsNav";
 
 function Categories() {
   const [categories, setCategories] = useState([]);
@@ -308,6 +309,11 @@ function Categories() {
   return (
     <>
       <div className="px-[20px] mb-[100px] main main_page">
+        <BreadcrumbsNav
+        customTrail={[
+          { label: "All SubCategories", path: "/Categories" },
+        ]}
+      />
         <PageTitle title={"Categories"} />
         <div className="px-4 rounded-lg shadow-md flex justify-between font-bold">
           <ul className="flex text-[12px] gap-2">

@@ -6,6 +6,7 @@ import { CloudArrowUpIcon } from "@heroicons/react/24/outline";
 import { USER_BASE_URL } from "../../config/Config";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import BreadcrumbsNav from "../../components/common/BreadcrumbsNav";
 
 const bannerTypes = [
   "advt_banner",
@@ -146,6 +147,12 @@ function CreateBanner() {
 
   return (
     <div className="main main_page">
+      <BreadcrumbsNav
+  customTrail={[
+    { label: "Banner List", path: "/BannerList" },
+    { label: "Create Banner", path: "/CreateBanner" },
+  ]}
+/>
       <PageTitle title={id ? "Edit Banner" : "Create Banner"} />
 
       <form

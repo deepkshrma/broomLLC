@@ -26,6 +26,7 @@ import { TfiLayoutMenuSeparated } from "react-icons/tfi";
 import AdminRoleModel from "../../components/AdminRoleModel/AdminRoleModel";
 import { AiOutlineExclamationCircle } from "react-icons/ai";
 import Pagination from "../../components/common/Pagination";
+import BreadcrumbsNav from "../../components/common/BreadcrumbsNav";
 
 const AdminList = () => {
   const [search, setSearch] = useState("");
@@ -404,9 +405,10 @@ const AdminList = () => {
     getFilteredRowModel: getFilteredRowModel(),
     getSortedRowModel: getSortedRowModel(),
   });
- 
+
   return (
     <div className="main main_page bg-[#F3F4F8] font-Montserrat space-y-4">
+      <BreadcrumbsNav customTrail={[{ label: "Admin List", path: "/admin_list" }]} />
       <div className="flex justify-between items-center">
         <PageTitle title={"Admin List"} />
         <button

@@ -10,6 +10,7 @@ import { CiExport } from "react-icons/ci";
 import { MdDownload, MdFilterList } from "react-icons/md";
 import image from "../../assets/images/icons/guest.png";
 import TogglebuttonSmall from "../../components/common/TogglebuttonSmall";
+import BreadcrumbsNav from "../../components/common/BreadcrumbsNav";
 import { FiEye } from "react-icons/fi";
 import { RiDeleteBinLine } from "react-icons/ri";
 import { FiEyeOff } from "react-icons/fi";
@@ -99,6 +100,11 @@ function PendingRequest() {
   return (
     <>
       <div className="main main_page bg-[#F3F4F8] font-Montserrat space-y-4">
+        <BreadcrumbsNav
+          customTrail={[
+            { label: "Pending Providers List", path: "/PendingRequest" },
+          ]}
+        />
         <PageTitle title={"Pending Request"} />
 
         <div className="px-4 rounded-lg shadow-md mt-5 flex justify-between font-bold">
@@ -203,29 +209,6 @@ function PendingRequest() {
                         </div>
                       </td>
                       <td className="text-[14px] px-8 py-3 text-center">
-                        {/* <div className="flex justify-center border border-gray-300 rounded-md overflow-hidden">
-                          <button
-                            className="w-8 h-8 flex items-center justify-center hover:bg-gray-100 transition cursor-pointer"
-                            title="View"
-                            onClick={() =>
-                              navigate(`/ProviderProfile/${item.id}`)
-                            }
-                          >
-                            <FiEye size={18} />
-                          </button>
-                          <button
-                            className="w-8 h-8 flex items-center justify-center border-l border-gray-300 hover:bg-gray-100 transition cursor-pointer"
-                            // onClick={() => handleDelete(item.id)}
-                            onClick={() => openDeleteModal(item._id)}
-                            title="Delete"
-                          >
-                            <RiDeleteBinLine
-                              className="text-red-500"
-                              size={18}
-                            />
-                          </button>
-                        </div> */}
-                        {/* <div className="w-full flex border-1 border-gray-300 rounded-md"> */}
                         <div
                           className="w-1/2 flex justify-center items-center cursor-pointer"
                           title="View"
@@ -237,17 +220,6 @@ function PendingRequest() {
                         >
                           <FiEye size={25} />
                         </div>
-                        {/* <div
-                            className="w-1/2 flex justify-center items-center border-l border-gray-300 hover:bg-gray-100 cursor-pointer"
-                            onClick={() => openDeleteModal(item.id)}
-                            title="Delete"
-                          >
-                            <RiDeleteBinLine
-                              className="text-red-500"
-                              size={18}
-                            />
-                          </div> */}
-                        {/* </div> */}
                       </td>
                     </tr>
                   </React.Fragment>

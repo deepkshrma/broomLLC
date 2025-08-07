@@ -6,6 +6,7 @@ import { toast } from "react-toastify";
 import { BASE_URL } from "../../config/Config";
 import SunEditor from "suneditor-react";
 import "suneditor/dist/css/suneditor.min.css";
+import BreadcrumbsNav from "../../components/common/BreadcrumbsNav";
 
 const policyTypes = [
   "Privacy",
@@ -101,6 +102,12 @@ const CreatePolicies = () => {
 
   return (
     <div className="main main_page">
+      <BreadcrumbsNav
+        customTrail={[
+          { label: "Policies List", path: "/PoliciesList" },
+          { label: "Create Policy", path: "/CreatePolicy" },
+        ]}
+      />
       <PageTitle title={isEditMode ? "Edit Policy" : "Create Policy"} />
 
       <form

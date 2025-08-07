@@ -8,6 +8,7 @@ import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import guest from "../../assets/images/icons/guest.png";
 import { BASE_URL } from "../../config/Config";
+import BreadcrumbsNav from "../../components/common/BreadcrumbsNav";
 
 function AdminUpdate() {
   const { id } = useParams();
@@ -193,6 +194,12 @@ function AdminUpdate() {
 
   return (
     <div className="main main_page">
+      <BreadcrumbsNav
+        customTrail={[
+          { label: "Admin List", path: "/admin_list" },
+          { label: "Edit Admin", path: "/update_profile/:id" },
+        ]}
+      />
       <PageTitle title={"Update Admin"} />
       <div className="w-full p-6 mt-4 bg-white rounded-lg shadow-md">
         <form onSubmit={handleSubmit} className="mt-8 bg-white p-8 ">

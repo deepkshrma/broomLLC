@@ -18,6 +18,7 @@ import { BASE_URL } from "../../config/Config";
 import { FaSearch } from "react-icons/fa";
 import { FaCaretLeft, FaCaretRight } from "react-icons/fa";
 import Pagination from "../../components/common/Pagination";
+import BreadcrumbsNav from "../../components/common/BreadcrumbsNav";
 
 function Roles() {
   const [search, setSearch] = useState("");
@@ -270,6 +271,11 @@ function Roles() {
 
   return (
     <div className="main main_page bg-[#F3F4F8] font-Montserrat space-y-4">
+      <BreadcrumbsNav
+        customTrail={[
+          { label: "Role List", path: "/Roles" },
+        ]}
+      />
       <div className="flex justify-between items-center">
         <PageTitle title={"All Roles"} />
         <button

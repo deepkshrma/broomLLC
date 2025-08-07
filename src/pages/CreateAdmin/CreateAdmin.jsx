@@ -7,6 +7,7 @@ import guestImg from "../../assets/images/icons/guest.png";
 import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import { BASE_URL } from "../../config/Config";
+import BreadcrumbsNav from "../../components/common/BreadcrumbsNav";
 
 function CreateAdmin() {
   const [formData, setFormData] = useState({
@@ -135,6 +136,12 @@ function CreateAdmin() {
 
   return (
     <div className="main main_page">
+      <BreadcrumbsNav
+        customTrail={[
+          { label: "Admin List", path: "/admin_list" },
+          { label: "Create Admin", path: "/CreateAdmin" },
+        ]}
+      />
       <PageTitle title={"Create Admin"} />
       <div className="w-full p-6 mt-4 bg-white rounded-lg shadow-md">
         <form action="" onSubmit={handleSubmit} className="mt-8 bg-white p-8 ">
@@ -289,7 +296,7 @@ function CreateAdmin() {
                   />
                   <label
                     htmlFor="upload-photo"
-                    className="absolute bottom-2 right-2 bg-blue-600 text-white p-2 rounded-full shadow-md cursor-pointer hover:bg-blue-700"
+                    className="absolute bottom-2 right-2 bg-gray-600 text-white p-2 rounded-full shadow-md cursor-pointer hover:bg-blue-700"
                   >
                     ✏️
                   </label>

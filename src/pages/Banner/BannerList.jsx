@@ -11,6 +11,7 @@ import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import { USER_BASE_URL } from "../../config/Config";
 import { toast } from "react-toastify";
+import BreadcrumbsNav from "../../components/common/BreadcrumbsNav";
 
 const BannerList = () => {
   const [loading, setLoading] = useState(false);
@@ -130,6 +131,11 @@ const BannerList = () => {
 
   return (
     <div className="bg-[#F3F4F8] font-Montserrat space-y-4 main main_page">
+      <BreadcrumbsNav
+  customTrail={[
+    { label: "Banner List", path: "/BannerList" },
+  ]}
+/>
       <div className="flex justify-between items-center">
         <PageTitle title={"Banner List"} />
         <button

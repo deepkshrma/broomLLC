@@ -8,6 +8,7 @@ import { RiDeleteBinLine } from "react-icons/ri";
 import { BASE_URL } from "../../config/Config";
 import { useNavigate } from "react-router-dom";
 import DeleteModel from "../../components/DeleteModel/DeleteModel";
+import BreadcrumbsNav from "../../components/common/BreadcrumbsNav";
 
 const PoliciesList = () => {
   const [policies, setPolicies] = useState([]);
@@ -129,6 +130,9 @@ const PoliciesList = () => {
 
   return (
     <div className="px-[20px] mb-[100px] main main_page">
+      <BreadcrumbsNav
+        customTrail={[{ label: "Policies List", path: "/PoliciesList" }]}
+      />
       <PageTitle title={"Policies List"} />
 
       <div className="w-full h-auto p-4 mt-2 bg-white rounded-lg shadow">

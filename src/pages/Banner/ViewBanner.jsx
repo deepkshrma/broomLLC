@@ -4,6 +4,7 @@ import axios from "axios";
 import { USER_BASE_URL } from "../../config/Config";
 import PageTitle from "../../components/common/PageTitle";
 import { toast } from "react-toastify";
+import BreadcrumbsNav from "../../components/common/BreadcrumbsNav";
 
 const ViewBanner = () => {
   const { id } = useParams();
@@ -67,11 +68,17 @@ const ViewBanner = () => {
 
   return (
     <div className="px-[20px] mb-[100px] main main_page">
+      <BreadcrumbsNav
+        customTrail={[
+          { label: "Banner List", path: "/BannerList" },
+          { label: "View Banner", path: "/ViewBanner" },
+        ]}
+      />
       <PageTitle title="View Banner" />
 
       <div className="bg-white p-6 rounded shadow w-full max-w-2xl mx-auto mt-4">
         {/* Name and Type on the same line */}
-        
+
         <div className="flex flex-col md:flex-row md:items-center md:gap-8 gap-4 mb-4">
           <div className="w-full md:w-auto">
             <p className="text-gray-800">

@@ -7,6 +7,7 @@ import PageTitle from "../../components/common/PageTitle";
 import { USER_BASE_URL } from "../../config/Config";
 import { toast } from "react-toastify";
 import ConfirmActionModal from "../../components/common/ConfirmActionModel/ConfirmActionModel";
+import BreadcrumbsNav from "../../components/common/BreadcrumbsNav";
 
 function ProviderProfile() {
   const [provider, setProvider] = useState(null);
@@ -117,11 +118,24 @@ function ProviderProfile() {
     setShowConfirmModal(false);
   };
 
+  const customTrail = {
+    list: [
+      { label: "Provider List", path: "/ProviderList" },
+      { label: "Provider Profile", path: "#" },
+    ],
+    pending: [
+      { label: "Pending Providers List", path: "/PendingRequest" },
+      { label: "Provider Profile", path: "#" },
+    ],
+  }[fromPage] || [{ label: "Provider Profile", path: "#" }];
+
   if (loading) return <div className="p-6">Loading provider details...</div>;
   if (!provider) return <div className="p-6">Provider not found.</div>;
 
   return (
     <div className="p-6 main main_page">
+      <BreadcrumbsNav customTrail={customTrail} />
+
       {/* Header */}
       <div className="flex justify-between items-center mb-6">
         <PageTitle title={"Provider Profile"} />

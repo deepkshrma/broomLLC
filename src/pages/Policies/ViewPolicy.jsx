@@ -4,6 +4,7 @@ import axios from "axios";
 import { BASE_URL } from "../../config/Config";
 import { toast } from "react-toastify";
 import PageTitle from "../../components/common/PageTitle";
+import BreadcrumbsNav from "../../components/common/BreadcrumbsNav";
 
 const ViewPolicy = () => {
   const { id } = useParams();
@@ -44,6 +45,12 @@ const ViewPolicy = () => {
 
   return (
     <div className="px-[20px] mb-[100px] main main_page">
+      <BreadcrumbsNav
+        customTrail={[
+          { label: "Policies List", path: "/PoliciesList" },
+          { label: "View Policy", path: "/ViewPolicy" },
+        ]}
+      />
       <PageTitle title="Policy Details" />
       <div className="p-4 mt-2 bg-white rounded-lg shadow">
         {policy ? (

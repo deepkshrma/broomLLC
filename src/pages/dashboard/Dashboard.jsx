@@ -10,10 +10,12 @@ import dashboard_admin from "../../assets/images/icons/admin.png";
 import dashboard_revenue from "../../assets/images/icons/revenue.png";
 import dashboard_pending from "../../assets/images/icons/pending.png";
 import PageTitle from "../../components/common/PageTitle";
+import BreadcrumbsNav from "../../components/common/BreadcrumbsNav";
 
 const Dashboard = () => {
   return (
     <div className="main main_page bg-[#F3F4F8] font-Montserrat space-y-4">
+      <BreadcrumbsNav />
       {/* ---------title page */}
       <PageTitle title={"Dashboard"} />
       {/* ---------card box */}

@@ -6,6 +6,7 @@ import { FaSearch } from "react-icons/fa";
 import axios from "axios";
 import image from "../../assets/images/icons/cat.png";
 import Pagination from "../../components/common/Pagination";
+import BreadcrumbsNav from "../../components/common/BreadcrumbsNav";
 import { TfiLayoutMenuSeparated } from "react-icons/tfi";
 import { MdEdit } from "react-icons/md";
 import { AiOutlineExclamationCircle } from "react-icons/ai";
@@ -81,7 +82,7 @@ const MainCategories = () => {
 
     fetchMainCategories();
   }, []);
-  
+
   const handleToggleStatus = async (item) => {
     try {
       const authData = JSON.parse(localStorage.getItem("broom_auth"));
@@ -117,6 +118,9 @@ const MainCategories = () => {
 
   return (
     <div className="px-[20px] mb-[100px] main main_page">
+      <BreadcrumbsNav
+        customTrail={[{ label: "Main Categories", path: "/MainCategories" }]}
+      />
       <PageTitle title={"Main Categories"} />
       <div className="px-4 rounded-lg shadow-md flex justify-between font-bold">
         <ul className="flex text-[12px] gap-2">

@@ -7,6 +7,7 @@ import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import guest from "../../assets/images/icons/guest.png";
 import { BASE_URL } from "../../config/Config";
+import BreadcrumbsNav from "../../components/common/BreadcrumbsNav";
 
 function ProfileUpdate() {
   const navigate = useNavigate();
@@ -168,6 +169,12 @@ function ProfileUpdate() {
 
   return (
     <div className="main main_page">
+      <BreadcrumbsNav
+        customTrail={[
+          { label: "My Profile", path: "/Profile" },
+          { label: "Edit Profile", path: "/ProfileUpdate" },
+        ]}
+      />
       <PageTitle title={"Update Profile"} />
       <div className="w-full p-6 mt-4 bg-white rounded-lg shadow-md">
         <form onSubmit={handleSubmit} className="mt-8 bg-white p-8 ">
@@ -296,7 +303,7 @@ function ProfileUpdate() {
                   />
                   <label
                     htmlFor="upload-photo"
-                    className="absolute bottom-2 right-2 bg-blue-600 text-white p-2 rounded-full shadow-md cursor-pointer hover:bg-blue-700"
+                    className="absolute bottom-2 right-2 bg-gray-600 text-white p-2 rounded-full shadow-md cursor-pointer hover:bg-blue-700"
                   >
                     ✏️
                   </label>
