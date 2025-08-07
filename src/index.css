@@ -1,0 +1,9 @@
+@import "tailwindcss";
+
+
+
+/* index.css or tailwind.css
+ use in create policy page  */
+.ProseMirror:focus {
+  outline: none;
+}
