@@ -146,6 +146,32 @@ function ProviderProfile() {
       {/* Header */}
       <div className="flex justify-between items-center mb-6">
         <PageTitle title={"Provider Profile"} />
+        <div>
+          <div className="flex gap-2 w-full">
+            {fromPage === "pending" && (
+              <>
+                <button
+                  className="flex w-1/2 items-center justify-center px-6 py-2 bg-green-500 text-white rounded hover:bg-green-600 cursor-pointer"
+                  onClick={() => {
+                    setActionType("approve");
+                    setShowConfirmModal(true);
+                  }}
+                >
+                  Accept
+                </button>
+                <button
+                  className="flex w-1/2 items-center justify-center px-6 py-2 bg-red-500 text-white rounded hover:bg-red-600 cursor-pointer"
+                  onClick={() => {
+                    setActionType("reject");
+                    setShowConfirmModal(true);
+                  }}
+                >
+                  Reject
+                </button>
+              </>
+            )}
+          </div>
+        </div>
       </div>
 
       {/* Profile Card */}
@@ -291,33 +317,6 @@ function ProviderProfile() {
               />
             </div>
           </div>
-        </div>
-      </div>
-
-      <div className="w-full">
-        <div className="flex gap-2 w-full">
-          {fromPage === "pending" && (
-            <>
-              <button
-                className="flex w-1/2 items-center justify-center px-4 py-2 bg-green-500 text-white rounded hover:bg-green-600 cursor-pointer"
-                onClick={() => {
-                  setActionType("approve");
-                  setShowConfirmModal(true);
-                }}
-              >
-                Accept
-              </button>
-              <button
-                className="flex w-1/2 items-center justify-center px-4 py-2 bg-red-500 text-white rounded hover:bg-red-600 cursor-pointer"
-                onClick={() => {
-                  setActionType("reject");
-                  setShowConfirmModal(true);
-                }}
-              >
-                Reject
-              </button>
-            </>
-          )}
         </div>
       </div>
 
