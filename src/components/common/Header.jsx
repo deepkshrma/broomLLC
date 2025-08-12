@@ -26,9 +26,9 @@ const Header = ({ setIs_Toggle, isToggle }) => {
 
   const handleUserDropdown = () => {
     // setUserDropdown(!userDropdown);
-    if (isAnimating) return; 
+    if (isAnimating) return;
 
-    setIsAnimating(true); 
+    setIsAnimating(true);
     setUserDropdown((prev) => !prev);
 
     setTimeout(() => setIsAnimating(false), 1000);
@@ -58,9 +58,14 @@ const Header = ({ setIs_Toggle, isToggle }) => {
       <div className="header header_top_menu fixed top-0 left-0 z-10 flex w-full py-2 items-center justify-between bg-white p-4 shadow-sm">
         <span>
           {isToggle ? (
-            <HiMenu size={18} onClick={handleToggle} />
+            "" // <HiMenu size={18} onClick={handleToggle} />
           ) : (
-            <HiX size={18} onClick={handleToggle} />
+            // <HiX size={18} onClick={handleToggle} />
+            <HiMenu
+              size={25}
+              onClick={handleToggle}
+              className="scale-x-100 w-8 cursor-pointer border-1 rounded border-gray-500 "
+            />
           )}
         </span>
 

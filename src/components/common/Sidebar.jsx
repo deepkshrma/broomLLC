@@ -16,9 +16,10 @@ import {
 import { FaChevronDown } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import ContextApi from "../../ContextApi";
-import { Navigate, useNavigate , useLocation } from "react-router-dom";
+import { HiMenu, HiX, HiBell } from "react-icons/hi";
+import { Navigate, useNavigate, useLocation } from "react-router-dom";
 
-const Sidebar = ({ isToggle }) => {
+const Sidebar = ({ setIs_Toggle, isToggle }) => {
   const { authData, setAuthData } = useContext(ContextApi);
 
   const userRole = authData?.user?.role?.name?.toLowerCase();
@@ -191,6 +192,10 @@ const Sidebar = ({ isToggle }) => {
     localStorage.setItem("sidebar_active_item", link);
   };
 
+  const handleToggle = () => {
+    setIs_Toggle(!isToggle);
+  };
+
   return (
     <>
       <div
@@ -199,8 +204,15 @@ const Sidebar = ({ isToggle }) => {
         } transition-all duration-800`}
       >
         {/* Logo */}
-        <div className="logo-container top-0 left-0 bg-white px-4 py-5 z-10">
+        <div className="flex justify-between logo-container top-0 left-0 bg-white px-4 py-5 z-10">
           <img src={logo} alt="Logo" className="logo w-[150px]  ms-4" />
+          {isToggle && (
+            <HiX
+              size={18}
+              onClick={handleToggle}
+              className="text-gray-500 cursor-pointer"
+            />
+          )}
         </div>
 
         {/* Navigation */}
