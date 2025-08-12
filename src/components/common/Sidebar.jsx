@@ -217,7 +217,7 @@ const Sidebar = ({ setIs_Toggle, isToggle }) => {
             <HiX
               size={18}
               onClick={handleToggle}
-              className="text-gray-500 cursor-pointer"
+              className="text-gray-500 cursor-pointer hover:scale-110"
             />
           )}
         </div>

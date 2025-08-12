@@ -64,7 +64,7 @@ const Header = ({ setIs_Toggle, isToggle }) => {
             <HiMenu
               size={25}
               onClick={handleToggle}
-              className="scale-x-100 w-8 cursor-pointer border-1 rounded border-gray-500 "
+              className="scale-x-100 w-8 cursor-pointer border-1 rounded border-gray-200 bg-gray-200 hover:bg-gray-300"
             />
           )}
         </span>
