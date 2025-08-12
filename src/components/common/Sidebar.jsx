@@ -12,7 +12,14 @@ import {
   XMarkIcon,
   Cog6ToothIcon,
 } from "@heroicons/react/24/outline";
-
+import { IoIosList } from "react-icons/io";
+import { IoMdPersonAdd } from "react-icons/io";
+import { MdCategory } from "react-icons/md";
+import { TbCategoryPlus } from "react-icons/tb";
+import { BsPersonFillGear } from "react-icons/bs";
+import { FaCircleUser } from "react-icons/fa6";
+import { AiFillSound } from "react-icons/ai";
+import { MdPolicy } from "react-icons/md";
 import { FaChevronDown } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import ContextApi from "../../ContextApi";
@@ -60,13 +67,13 @@ const Sidebar = ({ setIs_Toggle, isToggle }) => {
               },
               {
                 name: "Admin List",
-                icon: <Bars3Icon className="w-4" />,
+                icon: <IoIosList className="w-4" />,
                 dropdown: false,
                 link: "/admin_list",
               },
               {
                 name: "Create Admin",
-                icon: <Bars3Icon className="w-4" />,
+                icon: <IoMdPersonAdd className="w-4" />,
                 dropdown: false,
                 link: "/CreateAdmin",
               },
@@ -80,13 +87,13 @@ const Sidebar = ({ setIs_Toggle, isToggle }) => {
       items: [
         {
           name: "Main Categories",
-          icon: <CalendarIcon className="w-4" />,
+          icon: <MdCategory className="w-4" />,
           dropdown: false,
           link: "/MainCategories",
         },
         {
           name: "Sub Categories",
-          icon: <CalendarIcon className="w-4" />,
+          icon: <TbCategoryPlus className="w-4" />,
           dropdown: true,
           link: "#",
           subItems: [
@@ -102,7 +109,7 @@ const Sidebar = ({ setIs_Toggle, isToggle }) => {
       items: [
         {
           name: "Provider",
-          icon: <CalendarIcon className="w-4" />,
+          icon: <BsPersonFillGear className="w-4" />,
           dropdown: true,
           link: "#",
           subItems: [
@@ -112,7 +119,7 @@ const Sidebar = ({ setIs_Toggle, isToggle }) => {
         },
         {
           name: "User",
-          icon: <CalendarIcon className="w-4" />,
+          icon: <FaCircleUser className="w-4" />,
           dropdown: true,
           link: "#",
           subItems: [{ name: "User List", link: "/CustomerList" }],
@@ -125,7 +132,7 @@ const Sidebar = ({ setIs_Toggle, isToggle }) => {
       items: [
         {
           name: "Policies",
-          icon: <CalendarIcon className="w-4" />,
+          icon: <MdPolicy className="w-4" />,
           dropdown: true,
           link: "#",
           subItems: [
@@ -141,7 +148,7 @@ const Sidebar = ({ setIs_Toggle, isToggle }) => {
       items: [
         {
           name: "Banners",
-          icon: <CalendarIcon className="w-4" />,
+          icon: <AiFillSound className="w-4" />,
           dropdown: true,
           link: "#",
           subItems: [
