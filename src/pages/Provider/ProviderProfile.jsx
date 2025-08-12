@@ -151,7 +151,10 @@ function ProviderProfile() {
             {fromPage === "pending" && (
               <>
                 <button
-                  className="flex w-1/2 items-center justify-center px-6 py-2 bg-green-500 text-white rounded hover:bg-green-600 cursor-pointer"
+                  className="flex w-1/2 items-center justify-center px-6 py-1 
+             bg-green-500 text-white rounded 
+             hover:bg-green-600 hover:shadow-lg hover:scale-105
+             transform transition-all duration-200 ease-in-out cursor-pointer"
                   onClick={() => {
                     setActionType("approve");
                     setShowConfirmModal(true);
@@ -160,7 +163,7 @@ function ProviderProfile() {
                   Accept
                 </button>
                 <button
-                  className="flex w-1/2 items-center justify-center px-6 py-2 bg-red-500 text-white rounded hover:bg-red-600 cursor-pointer"
+                  className="flex w-1/2 items-center justify-center px-6 py-1 bg-red-500 text-white rounded hover:bg-red-600 hover:shadow-lg hover:scale-105  transform transition-all duration-200 ease-in-out cursor-pointer"
                   onClick={() => {
                     setActionType("reject");
                     setShowConfirmModal(true);
